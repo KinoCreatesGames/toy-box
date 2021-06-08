@@ -1,5 +1,7 @@
 package core;
 
+using Lambda;
+
 function getByFn<T>(arr:Array<T>, fn:T -> Bool):T {
 	var result = arr.filter(fn);
 	if (result != null) {
@@ -103,4 +105,40 @@ inline function intersectionInPlace<T>(array1:Array<T>,
 	}
 
 	return array1;
+}
+
+inline function arrayEquals(arr1:Array<Any>, arr2:Array<Any>) {
+	return arr1.length == arr2.length
+		&& !arr1.has((el, index) -> el != arr2[index]);
+}
+
+/**
+ * Clears an array of all values.
+ * @param {Array<Any>} array
+ */
+inline function clear(array:Array<Any>) {
+	array.resize(0);
+	return array;
+}
+
+/**
+ * Takes a set amount of elements from the start of an array.
+ 	* Doesn't modify the original array.
+ * @param {number} amount
+ * @param {any[]} list
+ * @returns {any[]}
+ */
+inline function take(amount:Int, list:Array<Any>) {
+	return list.slice(0, amount);
+}
+
+/**
+ * Takes a set amount of elements from the end of an array.
+ * Doesn't modify the original array.
+ * @param {number} amount
+ * @param {any[]} list
+ * @returns {any[]}
+ */
+inline function drop(amount:Int, list:Array<Any>) {
+	return list.slice(amount * -1);
 }

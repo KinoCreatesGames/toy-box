@@ -33,3 +33,14 @@ inline function negatef(num:Float) {
 inline function degToRad(degrees:Float):Float {
 	return degrees * Math.PI / 180;
 }
+
+/**
+ * Applies Linear Interpolation to the variable provided
+ * @param start
+ * @param end
+ * @param amount
+ * @return {Float}
+ */
+function lerp(start:Float, end:Float, amount:Float):Float {
+	return start + ((end - start) * amount);
+}
