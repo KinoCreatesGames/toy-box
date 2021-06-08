@@ -1,0 +1,13 @@
+{
+  "name": "toy-box",
+  "url" : "https://github.com/KinoCreatesGames/toy-box",
+  "license": "MIT",
+  "tags": ["utilities", "KinoCreates", "js", "haxe", "toybox"],
+  "description": "Collection of utility functions for game creation and work",
+  "version": "0.9.1",
+  "classPath": "src/",
+  "releasenote": "Initial release of Toy Box",
+  "contributors": ["Kino"],
+  "dependencies": {
+  }
+}
